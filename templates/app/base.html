@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stock Price Prediction</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- font-awesome icons -->
+    <!-- <link rel="stylesheet" href="static/css/font-awesome.min.css"/> -->
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.marquee.min.js"></script>
+    <!-- //js -->
+    <link href="//fonts.googleapis.com/css?family=Muli:300,300i,400,400i" rel="stylesheet">
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="static/js/move-top.js"></script>
+    <script type="text/javascript" src="static/js/easing.js"></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+
+
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+
+<body>
+<!-- header -->
+<div class="header">
+    <div class="w3ls_header_top">
+        <div class="container">
+            <div class="w3l_header_left">
+                <ul class="w3layouts_header">
+                    <li class="w3layouts_header_list">
+                        <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:pratik692002@gmail.com">pratik692002@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w3l_header_right">
+                <h2><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+(91) 774 483 0972</h2>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="w3ls_header_middle">
+        <div class="container">
+            <div class="agileits_logo">
+                <h1><a href="/"><span>Stock</span> Price<i>Use anytime anywhere</i></a></h1>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- //header -->
+{%block content%}
+{%endblock%}
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <p>© 2022-23 <a href="#">Stock Price.</a> All rights reserved.</p>
+    </div>
+</div>
+<!-- //footer -->
+<!-- stacked-graph -->
+<script type="text/javascript" src="static/js/raphael.js"></script>
+<script type="text/javascript" src="static/js/jquery.enumerable.js"></script>
+<script type="text/javascript" src="static/js/jquery.tufte-graph.js"></script>
+<script type="text/javascript">
+      $(document).ready(function () {
+
+        jQuery('#stacked-graph').tufteBar({
+          data: [
+            [[1.5, 1.0, 0.51], {label: '2013'}],
+            [[2.0, 1.03, 0.6], {label: '2014'}],
+            [[2.4, 0.9,  2.0], {label: '2015'}],
+            [[1.5, 2.6, 0.45], {label: '2016'}]
+          ],
+          barLabel:  function(index) {
+            amount = ($(this[0]).sum() * 10000).toFixed(0);
+            return '$' + $.tufteBar.formatNumber(amount);
+          },
+          axisLabel: function(index) { return this[1].label },
+          legend: {
+            data: ["Finance", "Metal", "Telecom"]
+          }
+        });
+      });
+
+
+</script>
+<!-- //stacked-graph -->
+<!-- script for marque -->
+<script>
+	  $('.marquee').marquee({
+		gap: 100,
+		delayBeforeStart: 0,
+		direction: 'left',
+		duplicated: true,
+		pauseOnHover: true
+	});
+
+
+</script>
+
+<!-- //script for marque -->
+<!-- Bootstrap Core JavaScript -->
+<script src="static/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
+});
+
+
+</script>
+<!-- //Bootstrap Core JavaScript -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<!-- form -->
+<div class="login" style="background-image: url('/static/images/st3.jpg');">
+    <div class="container">
+        <h3>Update Dataset</h3>
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <span class="input input--kuro">
+                <select name="company" class="form-control" style="height:45px;" required>
+                    <option value="">Select Company</option>
+                    {%for company in companies%}
+                    <option value="{{company}}">{{company}}</option>
+                    {%endfor%}
+                </select>
+            </span>
+            <input type="submit" value="Update">
+            <span class="input input--kuro">
+					<label class="text-info">{{message}}</label>
+				</span>
+        </form>
+
+    </div>
+</div>
+<!-- //form -->
+{% endblock %}

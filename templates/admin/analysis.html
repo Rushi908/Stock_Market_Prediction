@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="login">
+    <div class="container">
+        <h3>{{company}} Analysis</h3>
+        <hr>
+        <h4>Updated On: {{updated_on}}</h4>        
+        <center>
+            <img src="data:image/png;base64,{{ graphic|safe }}">            
+		<hr>
+		Predicted Close: {{prediction}}<hr>
+            <div style="font-size:18px;">
+                {%if decision %}
+                <i class="glyphicon glyphicon-ok-circle">&nbsp;</i><em class="text-success">You can Hold | Buy
+                stock</em>
+                {%else%}
+                <i class="glyphicon glyphicon-remove-circle">&nbsp;</i><em class="text-danger">Don't Hold | Sell
+                stock</em>
+                {%endif%}
+            </div>
+            <hr>
+            <label class="text-danger">{{message}}</label>
+        </center>
+    </div>
+</div>
+{% endblock %}

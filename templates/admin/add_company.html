@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<!-- form -->
+<div class="login" style="background-image: url('/static/images/st1.jpg');">
+    <div class="container" >
+        <h3>Add Company</h3>
+        <form method="post">
+            {%csrf_token%}
+            <span class="input input--kuro">
+					<input type="text" class="form-control" style="height:45px;" name="name" placeholder="Company Name"
+                           required>
+				</span>
+            <span class="input input--kuro">
+					<input type="text" class="form-control" style="height:45px;" name="ticker" placeholder="Company Ticker"
+                           required>
+				</span>
+
+            <input type="submit" value="Add">
+            <span class="input input--kuro">
+					<label class="text-info">{{message}}</label>
+				</span>
+        </form>
+
+    </div>
+</div>
+<!-- //form -->
+{% endblock %}

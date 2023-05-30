@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<link href="/static/css/datatables.min.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="/static/js/datatables.min.js"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+		$('#companies').DataTable({
+		paging: false,
+        companying: false,
+        info: true,
+			 });
+		});
+
+
+
+
+</script>
+<!-- form -->
+<div class="login">
+    <div class="container">
+        <h3>Search Company</h3>
+        <div class="table-responsive">
+            <table id="companies" class="table table-stripped">
+                <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Ticker</th>
+                    <th>Analysis</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for company in companies %}
+                <tr>
+                    <td>{{ company.name }}</td>
+                    <td>{{ company.ticker }}</td>
+                    <td>
+                        <a href="analysis?company={{ company.name }}">View Analysis</a>
+                    </td>
+                    <td>
+                        <form method="post" style="padding:0px; background:none; margin:0px;">
+                            {%csrf_token%}
+                            <input type="hidden" name="cname" value="{{company.name}}">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //form -->
+{% endblock %}

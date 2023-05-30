@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+{% block content %}
+<!-- form -->
+<div class="login" style="background-image: url('/static/images/stock5.jpg');">
+    <div class="container" >
+        <h3>User Login</h3>
+        <form method="post">
+            {%csrf_token%}
+            <span class="input input--kuro">
+					<input type="email" class="form-control" style="height:45px;" name="username" placeholder="Email"
+                           required>
+				</span>
+            <span class="input input--kuro">
+					<input type="password" class="form-control" style="height:45px;" name="password"
+                           placeholder="Password" required>
+				</span>
+            <input type="submit" value="Login">
+            <span class="input input--kuro">
+					<label class="text-danger">{{message}}</label>
+				</span>
+        </form>
+        <div class="w3l_login_form_bottom1">
+            <h5>For New People</h5>
+            <a href="register">Register Now!</a>
+        </div>
+    </div>
+</div>
+<!-- //form -->
+{% endblock %}
